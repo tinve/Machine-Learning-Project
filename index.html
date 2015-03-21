@@ -43,7 +43,7 @@ Participant were asked to perform barbell lifts correctly and incorrectly in 5 d
 <h2>
 <a id="data-cleaning" class="anchor" href="#data-cleaning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data cleaning</h2>
 
-<p>I have downloaded both csv files into my working directory and uploaded them to R workspace as data frames. All empty fields were filled with NA. Outcome A, B, C, D, E is stored in "classe" column.</p>
+<p>I have downloaded both csv files into my working directory and uploaded them to R workspace as data frames. All empty fields were filled with NA. Outcome (A, B, C, D or E) is stored in "classe" column.</p>
 
 <pre><code>library(caret)
 
@@ -67,7 +67,7 @@ validation &lt;- full[-inTrain, ]
 </code></pre>
 
 <p>Not all variables in the data set would make good predictors. So first I make a list of variable names that I want to drop from the data.
-Variables "X", "user_name", and "problem_id" should not affect the prediction. Since I build classification rather than forecasting model, I should also drop all variables related to time ("raw_timestamp_part_1",  "raw_timestamp_part_2", "cvtd_timestamp", "new_window" and "num_window").</p>
+Variables "X", "user_name", and "problem_id" should not affect the prediction. Since I build classification rather than forecasting model, I should also drop all variables related to time ("raw_timestamp_part_1", "raw_timestamp_part_2", "cvtd_timestamp", "new_window" and "num_window").</p>
 
 <pre><code># list of columns that should not affect the prediction
 
